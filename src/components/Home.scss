@@ -1,0 +1,101 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+ul {
+  @include flex-container(row, center, space-between);
+}
+.home__section {
+  #{&}--nav {
+    @include flex-container(row, center, space-between);
+    &-ul {
+      li {
+        margin-right: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+  #{&}--version {
+    @include flex-container(row, center, space-between);
+    img {
+      width: 100px;
+      height: auto;
+    }
+    &-tag {
+      background-color: rgb(255, 107, 181);
+      color: $n-primary-dark;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  }
+  #{&}--social {
+    @include flex-container(row, center, center);
+    &-ul {
+      li {
+        padding-left: 10px;
+        @include flex-container(row, center, center);
+        text-align: center;
+        svg {
+          @include flex-container(row, center, center);
+        }
+      }
+    }
+  }
+
+  #{&}--main {
+    padding: 180px 0;
+    position: relative;
+    background-color: #99ffa0;
+    background-color: #ffec99;
+    background-image: radial-gradient(
+        at 93% 82%,
+        hsla(61, 99%, 70%, 1) 0,
+        transparent 57%
+      ),
+      radial-gradient(at 91% 91%, hsla(125, 95%, 69%, 1) 0, transparent 51%),
+      radial-gradient(at 45% 82%, hsla(146, 99%, 70%, 1) 0, transparent 42%),
+      radial-gradient(at 15% 91%, hsla(312, 71%, 65%, 1) 0, transparent 59%),
+      radial-gradient(at 1% 75%, hsla(195, 82%, 64%, 1) 0, transparent 55%),
+      radial-gradient(at 73% 12%, hsla(98, 70%, 71%, 1) 0, transparent 43%),
+      radial-gradient(at 97% 43%, hsla(347, 61%, 66%, 1) 0, transparent 58%);
+
+    margin: 0 auto;
+    @media screen and (max-width: 910px) {
+      padding: 220px 0px 180px;
+    }
+    &-title {
+      color: $n-primary-dark;
+      @include width-box(65%);
+      @media screen and (max-width: 825px) {
+        @include width-box(90%);
+      }
+      @media screen and (max-width: 550px) {
+        @include width-box(100%);
+      }
+    }
+    &-para {
+      @include width-box(50%);
+      @media screen and (max-width: 825px) {
+        @include width-box(75%);
+      }
+      @media screen and (max-width: 550px) {
+        @include width-box(95%);
+      }
+    }
+    &-img {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 10px solid $n-primary-white;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "./variables.scss";
+
+.touch__section {
+  padding: 90px 0;
+  text-align: center;
+  padding-bottom: 50px;
+  > p {
+    display: inline-block;
+  }
+  #{&}--title {
+    overflow-wrap: break-word;
+    padding: 10px 0;
+  }
+}

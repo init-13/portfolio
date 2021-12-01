@@ -1,0 +1,117 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+//General Styling
+.projects__section {
+  // background-color: $secondary-blue;
+  z-index: -100;
+  //Classes Styling
+  .grid__container--projects {
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    @media screen and (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 20px 0;
+    }
+    @media screen and (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 40px 0;
+    }
+    > div {
+      height: 300px;
+      @include flex-container(column, flex-start, space-between);
+      padding: 25px;
+      border: 2px solid transparent;
+      position: relative;
+      > div {
+        &:nth-child(1) {
+          align-self: flex-end;
+          > div {
+            display: inline-block;
+            padding-left: 5px;
+          }
+        }
+        &:nth-child(2) {
+          justify-content: flex-end;
+          h2 {
+            padding: 25px 0;
+            line-height: 1.15;
+            width:85%;
+          }
+        }
+      }
+      &:nth-child(1) {
+        background: rgb(255, 175, 189);
+        background: linear-gradient(
+          66deg,
+          rgba(255, 175, 189, 1) 0%,
+          rgba(255, 195, 160, 1) 100%
+        );
+      }
+      &:nth-child(2) {
+        background: rgb(214, 207, 246);
+        background: radial-gradient(
+          circle,
+          rgba(214, 207, 246, 1) 0%,
+          rgba(177, 163, 215, 1) 100%
+        );
+      }
+      &:nth-child(3) {
+        background: rgb(147, 255, 143);
+        background: radial-gradient(
+          circle,
+          rgba(147, 255, 143, 1) 0%,
+          rgba(154, 218, 152, 1) 48%,
+          rgba(142, 219, 144, 1) 100%
+        );
+      }
+      &:nth-child(4) {
+        background: rgb(255, 240, 98);
+        background: radial-gradient(
+          circle,
+          rgba(255, 240, 98, 1) 0%,
+          rgba(219, 219, 142, 1) 100%
+        );
+      }
+      &:nth-child(5) {
+        background: rgb(249, 162, 158);
+        background: radial-gradient(
+          circle,
+          rgba(249, 162, 158, 1) 0%,
+          rgba(246, 180, 168, 1) 100%
+        );
+      }
+      &:nth-child(6) {
+        background: rgb(98, 220, 255);
+        background: radial-gradient(
+          circle,
+          rgba(98, 220, 255, 1) 0%,
+          rgba(168, 213, 246, 1) 100%
+        );
+      }
+      &:hover {
+        background: $n-primary-dark;
+        h2,
+        p {
+          color: $n-primary-white;
+        }
+        border: 2px solid $n-primary-dark;
+        svg {
+          fill: $n-primary-white;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          top: 15px;
+          left: -15px;
+          height: 100%;
+          width: 100%;
+          border: 2px solid $n-primary-dark;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
